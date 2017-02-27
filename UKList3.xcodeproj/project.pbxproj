@@ -14,6 +14,7 @@
 		D0353D791E645F6000EA0820 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0353D771E645F6000EA0820 /* LaunchScreen.storyboard */; };
 		D0353D841E645F6000EA0820 /* UKList3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0353D831E645F6000EA0820 /* UKList3Tests.swift */; };
 		D0353D8F1E645F6000EA0820 /* UKList3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0353D8E1E645F6000EA0820 /* UKList3UITests.swift */; };
+		D0353DA91E64711300EA0820 /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0353DA81E64711300EA0820 /* SubViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		D0353D8A1E645F6000EA0820 /* UKList3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UKList3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0353D8E1E645F6000EA0820 /* UKList3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UKList3UITests.swift; sourceTree = "<group>"; };
 		D0353D901E645F6000EA0820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0353DA81E64711300EA0820 /* SubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				D0353D6E1E645F6000EA0820 /* AppDelegate.swift */,
 				D0353D701E645F6000EA0820 /* ViewController.swift */,
 				D0353D721E645F6000EA0820 /* Main.storyboard */,
+				D0353DA81E64711300EA0820 /* SubViewController.swift */,
 				D0353D751E645F6000EA0820 /* Assets.xcassets */,
 				D0353D771E645F6000EA0820 /* LaunchScreen.storyboard */,
 				D0353D7A1E645F6000EA0820 /* Info.plist */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0353DA91E64711300EA0820 /* SubViewController.swift in Sources */,
 				D0353D711E645F6000EA0820 /* ViewController.swift in Sources */,
 				D0353D6F1E645F6000EA0820 /* AppDelegate.swift in Sources */,
 			);
@@ -415,6 +419,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZT729D84CQ;
 				INFOPLIST_FILE = UKList3/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.hishi.UKList3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -428,6 +433,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZT729D84CQ;
 				INFOPLIST_FILE = UKList3/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.hishi.UKList3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -512,6 +518,7 @@
 				D0353D951E645F6000EA0820 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0353D961E645F6000EA0820 /* Build configuration list for PBXNativeTarget "UKList3Tests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +527,7 @@
 				D0353D981E645F6000EA0820 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0353D991E645F6000EA0820 /* Build configuration list for PBXNativeTarget "UKList3UITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +536,7 @@
 				D0353D9B1E645F6000EA0820 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
