@@ -53,18 +53,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // Cell が選択された場合
     func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
-        // [indexPath.row] から画像名を探し、UImage を設定
-        /*
-        selectedImage = UIImage(named:"\(imgArray[indexPath.row])")
-        if selectedImage != nil {
-            // SubViewController へ遷移するために Segue を呼び出す
-            performSegue(withIdentifier: "toSubViewController",sender: nil)
-        }*/
         selectedCategoryName = "\(label2Array[indexPath.row])"
         if selectedCategoryName != nil {
             performSegue(withIdentifier: "toSubViewController", sender: nil)
         }
-        
     }
     
     // Segue 準備
@@ -76,14 +68,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toSecondViewController" {
-            let secondViewController = segue.destination as! SecondViewController
-            secondViewController.parameters = sender as! [String : String]
-        }
-    }
-    */
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
