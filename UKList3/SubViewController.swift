@@ -146,7 +146,7 @@ class SubViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 "洗剤" : true,
                 "柔軟剤" : true,
                 "おしゃれ着洗剤" : true,
-                "漂白剤" : false]
+                "漂白剤" : true]
             joutai.set(self.checkListItem, forKey: "Landry")
             joutai.synchronize()
         }else if CateName.text == "Bus/Toilet"{
@@ -195,7 +195,20 @@ class SubViewController: UIViewController, UITableViewDataSource, UITableViewDel
             joutai.synchronize()
         }
         
+     //==
+    func tableView(_ table: UITableView, numberOfRowsInSection section: Int) -> Int {
+            // Dictonary のキーの配列を取得
+            return checkListItem.count
+    }
+        
+    func tableView(_ table: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // tableCell の ID で UITableViewCell のインスタンスを生成
+        let cell = table.dequeueReusableCell(withIdentifier: "subtableCell", for: indexPath)
+        cell.imageView?.image = UIImage(named: "unchecked")
+        return cell
     
+        }
+        //==
     }
     
     //Table Viewのセルの数を指定

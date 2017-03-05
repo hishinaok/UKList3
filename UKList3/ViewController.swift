@@ -41,6 +41,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
         // Tag番号 1 で UIImageView インスタンスの生成
         let imageView = table.viewWithTag(1) as! UIImageView
+        imageView.layer.borderColor = UIColor.gray.cgColor
+        imageView.layer.borderWidth = 0.5
+        imageView.layer.cornerRadius = 50
+        imageView.layer.masksToBounds = true
         imageView.image = img
             
         
