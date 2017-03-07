@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
+    
+    @IBOutlet weak var UKList_Title: UILabel!
+    
     @IBOutlet var table: UITableView!
     //var selectedImage: UIImage?
     var selectedCategoryName: String?
@@ -22,9 +25,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //UKList_Title.backgroundColor =
+        self.view.backgroundColor = #colorLiteral(red: 0.7019607843, green: 0.8862745098, blue: 0.8470588235, alpha: 1)
+        self.table.backgroundColor = #colorLiteral(red: 0.7019607843, green: 0.8862745098, blue: 0.8470588235, alpha: 1)
+        //UKList_Title.backgroundColor = #colorLiteral(red: 0.9199255705, green: 0.9616718888, blue: 0.7431330085, alpha: 1)
+        UKList_Title.layer.cornerRadius = 10
+        UKList_Title.layer.masksToBounds = true
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    @IBAction func AllCreaBtn(_ sender: Any) {
+        //UserDefaultsを空っぽにする機能
+            joutai.removeObject(forKey: "Kitchen")
+            joutai.removeObject(forKey: "Landry")
+            joutai.removeObject(forKey: "bus")
+            joutai.removeObject(forKey: "Living")
+            joutai.removeObject(forKey: "Cosme")
+            joutai.synchronize()
+    }
         
     //Table Viewのセルの数を指定
     func tableView(_ table: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,15 +62,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let imageView = table.viewWithTag(1) as! UIImageView
         imageView.layer.borderColor = UIColor.gray.cgColor
         imageView.layer.borderWidth = 0.5
-        imageView.layer.cornerRadius = 50
+        imageView.layer.cornerRadius = 45
         imageView.layer.masksToBounds = true
+        imageView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         imageView.image = img
             
         
         // Tag番号 2 で UILabel インスタンスの生成
         let label2 = table.viewWithTag(2) as! UILabel
         label2.text = "\(label2Array[indexPath.row])"
-            
+        //label2.backgroundColor = #colorLiteral(red: 0.7019607843, green: 0.8862745098, blue: 0.8470588235, alpha: 1)
+        //label2.layer.cornerRadius = 15
+        //label2.layer.masksToBounds = true
+        
+        cell.backgroundColor = #colorLiteral(red: 0.9199255705, green: 0.9616718888, blue: 0.7431330085, alpha: 1)
+        //cell.layer.borderColor = UIColor.clear.cgColor
+        //cell.layer.borderWidth = 20.0
+        cell.layer.cornerRadius = 5
+        cell.layer.masksToBounds = true
+        
+        
             return cell
     }
     

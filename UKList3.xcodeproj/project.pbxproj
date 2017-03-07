@@ -15,6 +15,7 @@
 		D0353D841E645F6000EA0820 /* UKList3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0353D831E645F6000EA0820 /* UKList3Tests.swift */; };
 		D0353D8F1E645F6000EA0820 /* UKList3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0353D8E1E645F6000EA0820 /* UKList3UITests.swift */; };
 		D0353DA91E64711300EA0820 /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0353DA81E64711300EA0820 /* SubViewController.swift */; };
+		D0EA8E611E6DA74B00627F7D /* uzura.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0EA8E601E6DA74B00627F7D /* uzura.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D0353D8E1E645F6000EA0820 /* UKList3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UKList3UITests.swift; sourceTree = "<group>"; };
 		D0353D901E645F6000EA0820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0353DA81E64711300EA0820 /* SubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
+		D0EA8E601E6DA74B00627F7D /* uzura.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = uzura.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				D0353DA81E64711300EA0820 /* SubViewController.swift */,
 				D0353D721E645F6000EA0820 /* Main.storyboard */,
 				D0353D751E645F6000EA0820 /* Assets.xcassets */,
+				D0EA8E601E6DA74B00627F7D /* uzura.ttf */,
 				D0353D771E645F6000EA0820 /* LaunchScreen.storyboard */,
 				D0353D7A1E645F6000EA0820 /* Info.plist */,
 			);
@@ -238,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0EA8E611E6DA74B00627F7D /* uzura.ttf in Resources */,
 				D0353D791E645F6000EA0820 /* LaunchScreen.storyboard in Resources */,
 				D0353D761E645F6000EA0820 /* Assets.xcassets in Resources */,
 				D0353D741E645F6000EA0820 /* Main.storyboard in Resources */,
