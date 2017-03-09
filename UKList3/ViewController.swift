@@ -12,6 +12,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     @IBOutlet weak var UKList_Title: UILabel!
+    @IBOutlet weak var Crabtn: UIButton!
+    @IBOutlet weak var Listbtn: UIButton!
     
     @IBOutlet var table: UITableView!
     //var selectedImage: UIImage?
@@ -26,14 +28,32 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //UKList_Title.backgroundColor =
         self.view.backgroundColor = #colorLiteral(red: 0.7019607843, green: 0.8862745098, blue: 0.8470588235, alpha: 1)
         self.table.backgroundColor = #colorLiteral(red: 0.7019607843, green: 0.8862745098, blue: 0.8470588235, alpha: 1)
         //UKList_Title.backgroundColor = #colorLiteral(red: 0.9199255705, green: 0.9616718888, blue: 0.7431330085, alpha: 1)
         UKList_Title.layer.cornerRadius = 10
         UKList_Title.layer.masksToBounds = true
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+        
+        Crabtn.backgroundColor = #colorLiteral(red: 0.9960784314, green: 0.9019607843, blue: 0.6666666667, alpha: 1)
+        Crabtn.layer.cornerRadius = 10
+        Crabtn.layer.masksToBounds = true
+        
+        Listbtn.backgroundColor = #colorLiteral(red: 0.9960784314, green: 0.9019607843, blue: 0.6666666667, alpha: 1)
+        Listbtn.layer.cornerRadius = 10
+        Listbtn.layer.masksToBounds = true
+        
+        /* ボタンっぽくしたいのにできないー
+        Crabtn.layer.shadowColor = UIColor.gray.cgColor
+        Crabtn.layer.shadowOffset = CGSize(width: 10, height: 20)
+        Crabtn.layer.shadowOpacity = 20
+        Crabtn.layer.shadowRadius = 1
+        label.layer.shadowColor = [UIColor blackColor].CGColor;        // シャドウカラー
+        label.layer.shadowOffset = CGSizeMake(1, 1);        //  シャドウサイズ
+        label.layer.shadowOpacity = 1.0;        // 透明度
+        label.layer.shadowRadius = 1;
+        */
+        
+        }
 
     @IBAction func AllCreaBtn(_ sender: Any) {
         //UserDefaultsを空っぽにする機能

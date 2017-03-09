@@ -29,28 +29,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="★UKList★" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tm0-9g-S6X">
-                                <rect key="frame" x="26" y="30" width="140" height="33"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="g89-MA-i02"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="uzura_font" family="uzura_font" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSU-uO-Fc2">
-                                <rect key="frame" x="216" y="30" width="153" height="33"/>
-                                <fontDescription key="fontDescription" name="uzura_font" family="uzura_font" pointSize="19"/>
-                                <state key="normal" title="状態リセット"/>
-                                <connections>
-                                    <action selector="AllCreaBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OOD-rd-CFx"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="106" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gd1-c3-gi3">
-                                <rect key="frame" x="20" y="83" width="335" height="584"/>
+                                <rect key="frame" x="20" y="122" width="335" height="545"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="584" id="lW9-3H-o1g"/>
+                                    <constraint firstAttribute="height" constant="545" id="lW9-3H-o1g" userLabel="height = 550"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="106" id="dtq-tw-Fl2">
@@ -93,22 +76,55 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="4Jf-dW-X4l"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="★UKList★" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tm0-9g-S6X">
+                                <rect key="frame" x="26" y="30" width="140" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="g89-MA-i02"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="uzura_font" family="uzura_font" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSU-uO-Fc2">
+                                <rect key="frame" x="216" y="30" width="139" height="31"/>
+                                <fontDescription key="fontDescription" name="uzura_font" family="uzura_font" pointSize="19"/>
+                                <state key="normal" title="状態リセット">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="AllCreaBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OOD-rd-CFx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dex-vn-ZLp">
+                                <rect key="frame" x="217" y="69" width="136" height="32"/>
+                                <fontDescription key="fontDescription" name="uzura_font" family="uzura_font" pointSize="19"/>
+                                <state key="normal" title="買い物リストへ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="wsF-i9-6ES" kind="presentation" id="EJd-FY-gnZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tm0-9g-S6X" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="2DW-Xz-CxK"/>
-                            <constraint firstItem="RSU-uO-Fc2" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="10" id="3kV-R0-Iqh"/>
+                            <constraint firstItem="dex-vn-ZLp" firstAttribute="centerX" secondItem="RSU-uO-Fc2" secondAttribute="centerX" constant="-0.5" id="AFt-0k-Hx2"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Gd1-c3-gi3" secondAttribute="bottom" id="BNg-X1-L8V"/>
                             <constraint firstItem="RSU-uO-Fc2" firstAttribute="leading" secondItem="tm0-9g-S6X" secondAttribute="trailing" constant="50" id="Gcw-dy-3eP"/>
                             <constraint firstAttribute="trailing" secondItem="Gd1-c3-gi3" secondAttribute="trailing" constant="20" id="IVe-GG-CFf"/>
-                            <constraint firstItem="Gd1-c3-gi3" firstAttribute="top" secondItem="tm0-9g-S6X" secondAttribute="bottom" constant="20" id="KAw-ex-XGD"/>
+                            <constraint firstItem="Gd1-c3-gi3" firstAttribute="top" secondItem="dex-vn-ZLp" secondAttribute="bottom" constant="21" id="J0l-DG-FMH" userLabel="Table.top = Listbtn.bottom + 20"/>
                             <constraint firstItem="RSU-uO-Fc2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="P6c-GQ-CPA"/>
                             <constraint firstItem="Gd1-c3-gi3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Q5f-k3-1yX"/>
                             <constraint firstItem="tm0-9g-S6X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="QOa-D1-Rhm" userLabel="UKList Title.leading = leadingMargin + 10"/>
-                            <constraint firstItem="Gd1-c3-gi3" firstAttribute="top" secondItem="RSU-uO-Fc2" secondAttribute="bottom" constant="20" id="r5l-AX-SmQ"/>
+                            <constraint firstAttribute="trailing" secondItem="RSU-uO-Fc2" secondAttribute="trailing" constant="20" id="T1j-Qy-4Cf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dex-vn-ZLp" secondAttribute="trailing" constant="6" id="aBV-dc-fQs"/>
+                            <constraint firstItem="dex-vn-ZLp" firstAttribute="top" secondItem="RSU-uO-Fc2" secondAttribute="bottom" constant="8" id="jub-cF-TZG"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Crabtn" destination="RSU-uO-Fc2" id="N5g-wX-lw8"/>
+                        <outlet property="Listbtn" destination="dex-vn-ZLp" id="MJ1-jA-4EE"/>
                         <outlet property="UKList_Title" destination="tm0-9g-S6X" id="4YL-jd-LiU"/>
                         <outlet property="table" destination="Gd1-c3-gi3" id="02Q-iR-dw3"/>
                         <segue destination="LEc-Vc-awE" kind="presentation" identifier="toSubViewController" id="DE1-PN-wDZ"/>
@@ -117,6 +133,115 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+        <!--List View Controller-->
+        <scene sceneID="ifM-BI-iN3">
+            <objects>
+                <viewController id="wsF-i9-6ES" customClass="ListViewController" customModule="UKList3" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="93o-Yo-H7Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="LAQ-gn-Cpr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XSM-7x-BDl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gm6-cm-NgL">
+                                <rect key="frame" x="20" y="137" width="335" height="530"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="530" id="Jg5-sb-byI"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subtable2Cell" rowHeight="80" id="sEx-Kc-2NR">
+                                        <rect key="frame" x="0.0" y="28" width="335" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sEx-Kc-2NR" id="upf-Gp-eck">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jtJ-Q6-Xgv">
+                                                    <rect key="frame" x="8" y="1" width="89" height="81"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="89" id="hhY-sl-mXl"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jtJ-Q6-Xgv" firstAttribute="leading" secondItem="upf-Gp-eck" secondAttribute="leadingMargin" id="VOh-t7-pid"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="jtJ-Q6-Xgv" secondAttribute="bottom" constant="-11" id="fh2-v7-IZg"/>
+                                                <constraint firstItem="jtJ-Q6-Xgv" firstAttribute="top" secondItem="upf-Gp-eck" secondAttribute="topMargin" constant="-7" id="wPm-Jk-F4f"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wsF-i9-6ES" id="9p6-Qe-2CS"/>
+                                    <outlet property="delegate" destination="wsF-i9-6ES" id="eac-Fx-SDy"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="買い物リスト" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIb-yp-Cjd">
+                                <rect key="frame" x="61" y="73" width="253" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="Sbx-q5-TEQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="uzura_font" family="uzura_font" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-lC-LQ1">
+                                <rect key="frame" x="259" y="20" width="100" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="lfa-Fi-9LT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="uzura_font" family="uzura_font" pointSize="17"/>
+                                <state key="normal" title="全部買った">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="AllCrea:" destination="LEc-Vc-awE" eventType="touchUpInside" id="f6E-mW-qwc"/>
+                                    <action selector="AllCreaBtn2:" destination="wsF-i9-6ES" eventType="touchUpInside" id="Wph-Ql-N4v"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LtZ-OY-GyB">
+                                <rect key="frame" x="16" y="20" width="76" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="n7d-vM-aRU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="uzura_font" family="uzura_font" pointSize="17"/>
+                                <state key="normal" title="Topへ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="dEF-Jc-TmG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wIb-yp-Cjd" firstAttribute="top" secondItem="Ax6-lC-LQ1" secondAttribute="bottom" constant="19" id="39l-kT-DA2"/>
+                            <constraint firstItem="LtZ-OY-GyB" firstAttribute="top" secondItem="93o-Yo-H7Y" secondAttribute="bottom" id="7fi-xH-kDK"/>
+                            <constraint firstItem="LAQ-gn-Cpr" firstAttribute="top" secondItem="LtZ-OY-GyB" secondAttribute="bottom" constant="613" id="DfI-r6-jKo"/>
+                            <constraint firstItem="LAQ-gn-Cpr" firstAttribute="top" secondItem="Gm6-cm-NgL" secondAttribute="bottom" id="OMM-Bk-Nmw"/>
+                            <constraint firstItem="Ax6-lC-LQ1" firstAttribute="top" secondItem="93o-Yo-H7Y" secondAttribute="bottom" id="Z0H-IG-aeS"/>
+                            <constraint firstItem="Gm6-cm-NgL" firstAttribute="top" secondItem="wIb-yp-Cjd" secondAttribute="bottom" constant="25" id="cOI-Xr-ShD"/>
+                            <constraint firstItem="LtZ-OY-GyB" firstAttribute="leading" secondItem="XSM-7x-BDl" secondAttribute="leadingMargin" id="fIb-uP-klJ"/>
+                            <constraint firstItem="wIb-yp-Cjd" firstAttribute="leading" secondItem="XSM-7x-BDl" secondAttribute="leadingMargin" constant="45" id="fez-nb-gUy"/>
+                            <constraint firstAttribute="trailing" secondItem="Gm6-cm-NgL" secondAttribute="trailing" constant="20" id="g3h-UR-4Uy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ax6-lC-LQ1" secondAttribute="trailing" id="jA3-kd-Ivr"/>
+                            <constraint firstItem="Gm6-cm-NgL" firstAttribute="leading" secondItem="XSM-7x-BDl" secondAttribute="leading" constant="20" id="sOT-cS-YsE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wIb-yp-Cjd" secondAttribute="trailing" constant="45" id="uh8-Ga-QUN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="allcrabtn2" destination="Ax6-lC-LQ1" id="LCv-e6-seT"/>
+                        <outlet property="tableView" destination="Gm6-cm-NgL" id="qwM-ns-QWC"/>
+                        <outlet property="topbtn2" destination="LtZ-OY-GyB" id="jZw-RD-yWD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dBX-cc-Fxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="936.79999999999995" y="-313.49325337331339"/>
         </scene>
         <!--Sub View Controller-->
         <scene sceneID="BB4-4B-ajE">
@@ -131,12 +256,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZ0-nh-z3F">
-                                <rect key="frame" x="16" y="20" width="76" height="42"/>
+                                <rect key="frame" x="16" y="25" width="76" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="76" id="Tgm-En-GLK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="uzura_font" family="uzura_font" pointSize="17"/>
-                                <state key="normal" title="Topへ"/>
+                                <state key="normal" title="Topへ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="presentation" id="3mK-Ga-XhG"/>
                                 </connections>
@@ -185,12 +312,14 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yI-0z-Vqa">
-                                <rect key="frame" x="259" y="25" width="100" height="32"/>
+                                <rect key="frame" x="259" y="25" width="100" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="8Y9-H6-RLC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="uzura_font" family="uzura_font" pointSize="17"/>
-                                <state key="normal" title="全部買った"/>
+                                <state key="normal" title="全部買った">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="AllCrea:" destination="LEc-Vc-awE" eventType="touchUpInside" id="4Rd-gv-072"/>
                                 </connections>
@@ -198,9 +327,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="WBF-U4-Mxw" firstAttribute="top" secondItem="1yI-0z-Vqa" secondAttribute="bottom" constant="10" id="4WZ-Kv-v2b"/>
                             <constraint firstItem="Lql-cf-COh" firstAttribute="top" secondItem="WBF-U4-Mxw" secondAttribute="bottom" constant="20" id="5UF-tE-Wya"/>
-                            <constraint firstItem="WBF-U4-Mxw" firstAttribute="top" secondItem="1yI-0z-Vqa" secondAttribute="bottom" constant="12" id="6Ki-nO-p7C"/>
                             <constraint firstItem="1yI-0z-Vqa" firstAttribute="top" secondItem="zpj-Pa-J96" secondAttribute="bottom" constant="5" id="6rJ-Fu-3fh"/>
+                            <constraint firstItem="WBF-U4-Mxw" firstAttribute="top" secondItem="tZ0-nh-z3F" secondAttribute="bottom" constant="10" id="D1b-my-3Mf"/>
                             <constraint firstItem="WBF-U4-Mxw" firstAttribute="leading" secondItem="acB-WO-8XF" secondAttribute="leadingMargin" constant="45" id="F8y-bp-iqG"/>
                             <constraint firstItem="tZ0-nh-z3F" firstAttribute="firstBaseline" secondItem="1yI-0z-Vqa" secondAttribute="baseline" id="IQd-iL-TJL"/>
                             <constraint firstItem="tZ0-nh-z3F" firstAttribute="baseline" secondItem="1yI-0z-Vqa" secondAttribute="firstBaseline" id="ItC-v0-0UT"/>
@@ -208,8 +338,8 @@
                             <constraint firstAttribute="trailing" secondItem="Lql-cf-COh" secondAttribute="trailing" constant="20" id="MxI-4w-aH8"/>
                             <constraint firstItem="1yI-0z-Vqa" firstAttribute="trailing" secondItem="acB-WO-8XF" secondAttribute="trailingMargin" id="NhU-kU-mI1"/>
                             <constraint firstItem="1yI-0z-Vqa" firstAttribute="baseline" secondItem="tZ0-nh-z3F" secondAttribute="baseline" id="VRv-3A-TQn"/>
-                            <constraint firstItem="tZ0-nh-z3F" firstAttribute="top" secondItem="zpj-Pa-J96" secondAttribute="bottom" id="hRy-SL-Vzx"/>
                             <constraint firstItem="RcT-hb-GFX" firstAttribute="top" secondItem="Lql-cf-COh" secondAttribute="bottom" id="isZ-RL-Hbi"/>
+                            <constraint firstItem="tZ0-nh-z3F" firstAttribute="top" secondItem="zpj-Pa-J96" secondAttribute="bottom" constant="5" id="kGi-5q-IfK"/>
                             <constraint firstItem="RcT-hb-GFX" firstAttribute="top" secondItem="Lql-cf-COh" secondAttribute="bottom" id="rcM-kf-7Z8"/>
                             <constraint firstItem="tZ0-nh-z3F" firstAttribute="leading" secondItem="acB-WO-8XF" secondAttribute="leadingMargin" id="sVC-Sc-VVM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WBF-U4-Mxw" secondAttribute="trailing" constant="45" id="vWg-IW-gPC"/>
@@ -217,12 +347,17 @@
                     </view>
                     <connections>
                         <outlet property="CateName" destination="WBF-U4-Mxw" id="PeP-xt-9be"/>
+                        <outlet property="allcrabtn" destination="1yI-0z-Vqa" id="EUH-QR-JBF"/>
                         <outlet property="table" destination="Lql-cf-COh" id="K1u-nE-uPG"/>
+                        <outlet property="topbtn" destination="tZ0-nh-z3F" id="Bsn-Xc-Shy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OAB-Qv-U3A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="940" y="-1.3493253373313345"/>
+            <point key="canvasLocation" x="935" y="358"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="dEF-Jc-TmG"/>
+    </inferredMetricsTieBreakers>
 </document>

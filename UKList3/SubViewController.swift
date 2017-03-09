@@ -12,8 +12,12 @@ let joutai = UserDefaults.standard
 
 class SubViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var topbtn: UIButton!
+    @IBOutlet weak var allcrabtn: UIButton!
+    
     @IBOutlet var table: UITableView!
     @IBOutlet var CateName: UILabel!
+    
     var selectedCateName: String!
     var selectedItem: String?
     @IBOutlet var chkImg: UIImageView!
@@ -38,6 +42,13 @@ class SubViewController: UIViewController, UITableViewDataSource, UITableViewDel
         self.view.backgroundColor = #colorLiteral(red: 0.7019607843, green: 0.8862745098, blue: 0.8470588235, alpha: 1)
         self.table.backgroundColor = #colorLiteral(red: 0.7019607843, green: 0.8862745098, blue: 0.8470588235, alpha: 1)
         
+        topbtn.backgroundColor = #colorLiteral(red: 0.9960784314, green: 0.9019607843, blue: 0.6666666667, alpha: 1)
+        topbtn.layer.cornerRadius = 10
+        topbtn.layer.masksToBounds = true
+        
+        allcrabtn.backgroundColor = #colorLiteral(red: 0.9960784314, green: 0.9019607843, blue: 0.6666666667, alpha: 1)
+        allcrabtn.layer.cornerRadius = 10
+        allcrabtn.layer.masksToBounds = true
         
         if selectedCateName == "Kitchen" {
         //=====Kitchen==================
@@ -226,6 +237,7 @@ class SubViewController: UIViewController, UITableViewDataSource, UITableViewDel
         cell.imageView?.layer.masksToBounds = true
         cell.imageView?.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
+        cell.textLabel?.font = UIFont(name: "uzura_font", size: 18)
         
         // Dictonary のキーの配列を取得
         var keys = [String](checkListItem.keys)
@@ -309,7 +321,7 @@ class SubViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 }
             }
             // 選択状態を解除 →　ここを入れないとセルの選択でグレーになっているのが取れない。。。。？
-            //cell.isSelected = false
+            cell.isSelected = false
  
             }
     }
