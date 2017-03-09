@@ -46,13 +46,10 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         checkListItemBLi = checkListItem1.merged(with: checkListItem2)
         
         checkListItemMerge = checkListItemKL.merged(with: checkListItemBLi)
-
+        
         checkListItem1 = joutai.object(forKey: "Cosme") as! [String : Bool]
-        
         checkListItem = checkListItemMerge.merged(with: checkListItem1)
-        
 
-        // Do any additional setup after loading the view.
     }
 
     
@@ -93,11 +90,12 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.imageView?.image = UIImage(named: "checked")
             cell.textLabel?.text = cellText
         }
-        
        return cell
-        
     }
     
+    
+    
+    //セルの高さ指定する関数
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         var keys = [String](checkListItem.keys)
@@ -113,9 +111,8 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     
-    
+    //UserDefaultsを空っぽにする機能
     @IBAction func AllCreaBtn2(_ sender: Any) {
-        //UserDefaultsを空っぽにする機能
         joutai.removeObject(forKey: "Kitchen")
         joutai.removeObject(forKey: "Landry")
         joutai.removeObject(forKey: "bus")
@@ -131,12 +128,13 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+        }
     
 }
 
 
+
+//辞書を結合するextension
 extension Dictionary {
     mutating func merge<S: Sequence>(contentsOf other: S) where S.Iterator.Element == (key: Key, value: Value) {
         for (key, value) in other {
@@ -151,11 +149,4 @@ extension Dictionary {
     }
 }
 
-public extension Dictionary {
-    public func union(other: Dictionary) -> Dictionary {
-        var tmp = self
-        other.forEach { tmp[$0.0] = $0.1 }
-        return tmp
-    }
-}
 

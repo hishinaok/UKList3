@@ -16,7 +16,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var Listbtn: UIButton!
     
     @IBOutlet var table: UITableView!
-    //var selectedImage: UIImage?
     var selectedCategoryName: String?
     
     
@@ -30,7 +29,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         self.view.backgroundColor = #colorLiteral(red: 0.7019607843, green: 0.8862745098, blue: 0.8470588235, alpha: 1)
         self.table.backgroundColor = #colorLiteral(red: 0.7019607843, green: 0.8862745098, blue: 0.8470588235, alpha: 1)
-        //UKList_Title.backgroundColor = #colorLiteral(red: 0.9199255705, green: 0.9616718888, blue: 0.7431330085, alpha: 1)
         UKList_Title.layer.cornerRadius = 10
         UKList_Title.layer.masksToBounds = true
         
@@ -41,18 +39,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         Listbtn.backgroundColor = #colorLiteral(red: 0.9960784314, green: 0.9019607843, blue: 0.6666666667, alpha: 1)
         Listbtn.layer.cornerRadius = 10
         Listbtn.layer.masksToBounds = true
-        
-        /* ボタンっぽくしたいのにできないー
-        Crabtn.layer.shadowColor = UIColor.gray.cgColor
-        Crabtn.layer.shadowOffset = CGSize(width: 10, height: 20)
-        Crabtn.layer.shadowOpacity = 20
-        Crabtn.layer.shadowRadius = 1
-        label.layer.shadowColor = [UIColor blackColor].CGColor;        // シャドウカラー
-        label.layer.shadowOffset = CGSizeMake(1, 1);        //  シャドウサイズ
-        label.layer.shadowOpacity = 1.0;        // 透明度
-        label.layer.shadowRadius = 1;
-        */
-        
         }
 
     @IBAction func AllCreaBtn(_ sender: Any) {
@@ -73,7 +59,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //各セルの要素を設定する
     func tableView(_ table: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            
         // tableCell の ID で UITableViewCell のインスタンスを生成
         let cell = table.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
         let img = UIImage(named:"\(imgArray[indexPath.row])")
@@ -91,19 +76,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Tag番号 2 で UILabel インスタンスの生成
         let label2 = table.viewWithTag(2) as! UILabel
         label2.text = "\(label2Array[indexPath.row])"
-        //label2.backgroundColor = #colorLiteral(red: 0.7019607843, green: 0.8862745098, blue: 0.8470588235, alpha: 1)
-        //label2.layer.cornerRadius = 15
-        //label2.layer.masksToBounds = true
         
         cell.backgroundColor = #colorLiteral(red: 0.9199255705, green: 0.9616718888, blue: 0.7431330085, alpha: 1)
-        //cell.layer.borderColor = UIColor.clear.cgColor
-        //cell.layer.borderWidth = 20.0
         cell.layer.cornerRadius = 5
         cell.layer.masksToBounds = true
-        
-        
-            return cell
+        return cell
     }
+    
     
     // Cell が選択された場合
     func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
@@ -112,6 +91,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             performSegue(withIdentifier: "toSubViewController", sender: nil)
         }
     }
+    
     
     // Segue 準備
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
@@ -123,11 +103,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
 }
 

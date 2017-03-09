@@ -20,18 +20,13 @@ class SubViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     var selectedCateName: String!
     var selectedItem: String?
+    
     @IBOutlet var chkImg: UIImageView!
     @IBOutlet var cellname: UILabel!
-    
-
-    
     
     // チェックリストの項目とチェック状態
     var checkListItem: [String : Bool] = [:]
   
-    
-//    //ボタンの状態を保持しておくためのインスタンス作成
-//    let joutai = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +60,7 @@ class SubViewController: UIViewController, UITableViewDataSource, UITableViewDel
                     "アルミホイル": true,
                     "三角コーナー用ネット": true]
             }
+            
         }else if selectedCateName == "Landry"{
         //=====Landry==================
             if (joutai.object(forKey: "Landry") != nil) {
@@ -77,6 +73,7 @@ class SubViewController: UIViewController, UITableViewDataSource, UITableViewDel
                     "おしゃれ着洗剤" : true,
                     "漂白剤" : true]
             }
+            
         }else if selectedCateName == "Bus/Toilet"{
         //=====Bus/Toilet==================
             if (joutai.object(forKey: "bus") != nil) {
@@ -100,6 +97,7 @@ class SubViewController: UIViewController, UITableViewDataSource, UITableViewDel
                     "ワックス" : true,
                     "排水溝パイプクリーナー" : true]
             }
+            
         }else if selectedCateName == "Living"{
         //=====Livig==================
             if (joutai.object(forKey: "Living") != nil) {
@@ -112,6 +110,7 @@ class SubViewController: UIViewController, UITableViewDataSource, UITableViewDel
                     "ファブリーズ" : true,
                     "ティッシュ" : true]
             }
+            
         }else {
         //=====Cosme==================
             if (joutai.object(forKey: "Cosme") != nil) {
@@ -140,7 +139,8 @@ class SubViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     
     
-
+    
+    //買い物したときに一括チェック外す機能
     @IBAction func AllCrea(_ sender: Any) {
         if CateName.text == "Kitchen"{
             checkListItem = [
@@ -153,6 +153,7 @@ class SubViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 "三角コーナー用ネット": true]
             joutai.set(self.checkListItem, forKey: "Kitchen")
             joutai.synchronize()
+            
         }else if CateName.text == "Landry"{
             checkListItem = [
                 "洗剤" : true,
@@ -161,6 +162,7 @@ class SubViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 "漂白剤" : true]
             joutai.set(self.checkListItem, forKey: "Landry")
             joutai.synchronize()
+            
         }else if CateName.text == "Bus/Toilet"{
             checkListItem = [
                 "シャンプー" : true,
@@ -179,6 +181,7 @@ class SubViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 "排水溝パイプクリーナー" : true]
             joutai.set(self.checkListItem, forKey: "bus")
             joutai.synchronize()
+            
         }else if CateName.text == "Living"{
             checkListItem = [
                 "クイックルワイパー" : true,
@@ -187,6 +190,7 @@ class SubViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 "ティッシュ" : true]
             joutai.set(self.checkListItem, forKey: "Living")
             joutai.synchronize()
+            
         }else{
             checkListItem = [
                 "化粧水" : true,
@@ -206,19 +210,17 @@ class SubViewController: UIViewController, UITableViewDataSource, UITableViewDel
             joutai.set(self.checkListItem, forKey: "Cosme")
             joutai.synchronize()
         }
-
-        //print("ここまではこれてるよ")
         table.reloadData()
-    
     }
     
     
 
     
     
+    
+    
     //Table Viewのセルの数を指定
     func tableView(_ table: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // Dictonary のキーの配列を取得
         return checkListItem.count
     }
     
@@ -253,10 +255,6 @@ class SubViewController: UIViewController, UITableViewDataSource, UITableViewDel
             cell.imageView?.image = UIImage(named: "checked")
         }
         
-        
-        // Tag番号 2 で UILabel インスタンスの生成
-        //let label2 = table.viewWithTag(6) as! UILabel
-        //label2.text = "\(keys[indexPath.row])"
         cell.textLabel?.text = cellText
         return cell
         
@@ -264,23 +262,16 @@ class SubViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     // セルがタップされた時の処理
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
             if let cell = tableView.cellForRow(at: indexPath){
             
             // タップしたセルのテキストを取得
-            
-                /*
-            //var keys2 = [String](checkListItem.keys)
-            
-            selectedItem = "\(keys2[indexPath.row])"
-                 */
             selectedItem = cell.textLabel?.text
-            print("\(selectedItem)")
+            
             // 画像を切り替えと Dictonary の値を変更
            if cell.imageView?.image == UIImage(named: "checked") {
                 self.checkListItem.updateValue(true, forKey: selectedItem!)
                 cell.imageView?.image = UIImage(named: "unchecked")
-               print("買った")
+                print("買った")
             
                 if CateName.text == "Kitchen" {
                     joutai.set(self.checkListItem, forKey: "Kitchen")
@@ -298,6 +289,7 @@ class SubViewController: UIViewController, UITableViewDataSource, UITableViewDel
                     joutai.set(self.checkListItem, forKey: "Living")
                     joutai.synchronize()
                 }
+            
            }else {
                 self.checkListItem.updateValue(false, forKey: selectedItem!)
                 cell.imageView?.image = UIImage(named: "checked")
@@ -320,7 +312,7 @@ class SubViewController: UIViewController, UITableViewDataSource, UITableViewDel
                     joutai.synchronize()
                 }
             }
-            // 選択状態を解除 →　ここを入れないとセルの選択でグレーになっているのが取れない。。。。？
+            // 選択状態を解除 →　ここを入れないとセルの選択でグレーになっているのが取れないっぽい
             cell.isSelected = false
  
             }
@@ -332,7 +324,6 @@ class SubViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
         }
     
 
